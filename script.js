@@ -27,9 +27,7 @@ $(document).ready(function(){
             var angles = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
             for( i in angles ) {
         	if(degrees >= low && degrees < high){
-        	    console.log(angles[i]);
         	    return angles[i];
-        	    console.log("derp");
           }
         	low = (low + range) % 360;
         	high = (high + range) % 360;
@@ -37,7 +35,9 @@ $(document).ready(function(){
           return "N";
         }
 
-
+        if (weatherType === 'clear sky') {
+          $('body').css("background-image", )
+        }
 
 
         fTemp = (kTemp*(9/5)-459.67).toFixed(0);

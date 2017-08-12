@@ -1,15 +1,25 @@
 body {
-
+  background-image: url("img/bck.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main {
   padding-top: 10em;
 }
 
+#icon {
+  margin-top: 15px;
+}
+
 .temp {
-  font-size: 5em;
+  font-size: 45px!important;
 }
 
 .top {
   padding-bottom: 30px;
+}
+
+.no-padding {
+  padding: 0px!important;
 }
