@@ -16,16 +16,47 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="text-center jumbotron">
-      <ul class="list-unstyled">
-        <li class="btn btn-default" id="city"></li>
-        <li class="btn btn-default" id="weatherType"></li>
-        <li class="btn btn-default" id="fTemp"></li>
-        <li class="btn btn-default" id="windSpeed"></li>
-        <li><img id="icon" width="75px"></li>
-      </ul>
-    </div>
+    <div class="container">
+      <div class="row main">
+        <div class="row top">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <div class="col-md-3"><img id="icon" width="85px"></span></div>
+            <div class="col-md-9"><h1 class="temp" id="fTemp"></h1></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <h1 id="city"></h1>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <h1 id="weatherType"></h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <h1 id="windSpeed"></h1>
+              </div>
+            </div>
+          </div>
+
+              <!-- <li id="city"></li>
+              <li id="weatherType"></li>
+              <li id="fTemp"></li>
+              <li id="windSpeed"></li>
+              <li><img id="icon" width="75px"></li> -->
+        </div>
+      </div>
+    </div>
 
 
 
