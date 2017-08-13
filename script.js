@@ -1,11 +1,10 @@
 $(document).ready(function(){
 
-
   $.getJSON("http://ip-api.com/json", function(data){
     var lat = data.lat;
     var long = data.lon;
 
-      var api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
+      var api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
 
       $.getJSON(api, function(data){
         var weatherType =  titleCase(data.weather[0].description);
