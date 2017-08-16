@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
-  $.getJSON("https://ip-api.com/json", function(data){
+  $.getJSON("http://ip-api.com/json", function(data){
     var lat = data.lat;
     var long = data.lon;
 
-      var api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
+      var api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
 
       $.getJSON(api, function(data){
         var weatherType =  titleCase(data.weather[0].description);
@@ -34,9 +34,6 @@ $(document).ready(function(){
           return "N";
         }
 
-        if (weatherType === 'clear sky') {
-          $('body').css("background-image", )
-        }
 
 
         fTemp = (kTemp*(9/5)-459.67).toFixed(0);
