@@ -1,10 +1,18 @@
 $(document).ready(function(){
 
-  $.getJSON("http://ip-api.com/json", function(data){
-    var lat = data.lat;
-    var long = data.lon;
+  // $.getJSON("http://ip-api.com/json", function(data){
+  //   var lat = data.lat;
+  //   var long = data.lon;
+  //
+  //     var api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
 
-      var api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position){
+      var long = position.coords.longitude;
+      var lat = position.coords.latitude;
+
+          var api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=a9851a64cb9ff8ebeb57d5dd6af42a87`;
+
 
       $.getJSON(api, function(data){
         var weatherType =  titleCase(data.weather[0].description);
@@ -34,8 +42,6 @@ $(document).ready(function(){
           return "N";
         }
 
-
-
         fTemp = (kTemp*(9/5)-459.67).toFixed(0);
         var cTemp = (kTemp-273).toFixed(0);
 
@@ -51,11 +57,12 @@ $(document).ready(function(){
               $('#fTemp').html(cTemp + "&#8451;");
               tempSwap=false;
             }
-        });
+          });
+
 
         windSpeed = (2.237*(windSpeed)).toFixed(1);
         $('#windSpeed').html(windSpeed + "mph " + dir)
-      });
-
-  });
+});
+});
+}
 });
